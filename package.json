@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "db:gen": "prisma generate",
-    "db:push": "prisma deploy",
+    "db:gen": "dotenv -e .env.local prisma generate",
+    "db:mig": "dotenv -e .env.local prisma migrate dev",
+    "db:push": "dotenv -e .env.local prisma db push",
     "start": "next start",
     "lint": "next lint"
   },
@@ -28,6 +29,7 @@
     "bcrypt": "^5.1.0",
     "class-variance-authority": "^0.6.1",
     "clsx": "^2.0.0",
+    "dotenv": "^16.3.1",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
     "jsonwebtoken": "^9.0.1",
